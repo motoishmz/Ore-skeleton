@@ -1,3 +1,11 @@
+# node
+node_modules
+
+# sinatra
+tmp
+
+
+
 # Some general ignore patterns
 build/
 obj/
