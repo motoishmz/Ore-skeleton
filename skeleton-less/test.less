@@ -1,0 +1,93 @@
+@mycolor: red;
+@mydarkcolor: darken(@mycolor, 10%);
+@mysize: 24px;
+@mysize-min: @mysize - 4px;
+
+// macro....
+@heading: h;
+@myclass: class-test-one-two;
+@assetpath: "/img";
+
+@{heading}1.@{myclass}
+{
+	color:@mycolor;
+	font-size:@mysize;
+}
+@{heading}2
+{
+	color:@mydarkcolor;
+	font-size:@mysize-min;
+	background: url("@{assetpath}/y.png");
+}
+
+
+// mixin
+.mymixin
+{
+	border:5px solid;
+}
+
+.myclass2
+{
+	.mymixin;
+}
+
+// idでもok
+#precious-node
+{
+	background:red;
+}
+
+#another-precious-node// 
+{
+	#precious-node;
+}
+
+
+
+// functional mixin
+
+.class-with-size(@size)
+{
+	margin:@size;
+	padding:10px;
+}
+
+.paragraph1
+{
+	.class-with-size(10px)
+}
+
+.paragraph2
+{
+	.class-with-size(20px)
+}
+
+// nest
+a
+{
+	text-decoration:none;
+	&:hover{ color:red; }
+	&:active{ color:orange; }
+	&:visited{ color:green; }
+}
+
+
+// extend
+// <div class="button button-ok">
+// <div class="button-ok">
+.button
+{
+	border:5px solid;
+}
+
+.button-ok
+{
+	&:extend(.button);
+	border-color:green;
+}
+.button-ng
+{
+	&:extend(.button);
+	border-color:red;
+}
