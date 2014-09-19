@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="utf-8"/>
+	<meta name="author" content="Scott Gilbertson">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>iOS 6 Media Capture Demo</title>
+<style>.alert{color:red}</style>
+</head>
+<body>
+
+<form>
+<input type="file" accept="image/*" capture="camera">
+</form>
+<p><code>&lt;input type="file" accept="image/*" capture="camera"&gt;</code></p>
+
+<form>
+<input type="file" accept="video/*" capture="camcorder">
+</form>
+<p><code>&lt;input type="file" accept="video/*" capture="camcorder"&gt;</code></p>
+
+<p class="alert">Not Working:</p>
+<form>
+<input type="file" accept="audio/*" capture="microphone">
+</form>
+<p><code>&lt;input type="file" accept="audio/*" capture="microphone"&gt;</code></p>
+</body>
+</html>

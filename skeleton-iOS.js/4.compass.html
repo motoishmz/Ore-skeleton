@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ore js test</title>
+<meta name="viewport" content="initial-scale=1.0,user-scalable=0"/>
+<link href="stylesheets/scaffold.css" rel="stylesheet">
+<style type="text/css" media="screen">
+	
+#compass
+{
+	text-align:center;
+	padding: 100px 0;
+}
+</style>
+</head>
+
+<body>
+
+
+
+<p id="compass"></p>
+
+
+<script>
+
+var compass = document.getElementById('compass');
+
+var updateCompass = function(e) {
+	
+	var heading = e.webkitCompassHeading;
+	if (heading < 0) heading += 360;
+	heading += window.orientation;
+	compass.innerHTML = "↑ " + heading;
+	compass.style.webkitTransform = 'rotate(-'+(heading)+'deg)';
+};
+
+window.addEventListener('deviceorientation', updateCompass);
+</script>
+</body>
+</html>

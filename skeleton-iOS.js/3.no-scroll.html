@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ore js test</title>
+<meta name="viewport" content="initial-scale=1.0,user-scalable=0"/>
+<link href="stylesheets/scaffold.css" rel="stylesheet">
+<style type="text/css" media="screen">
+button
+{
+	font-size:50px
+}
+</style>
+</head>
+
+<body>
+
+<button id="toggle">toggle</button>
+
+
+<script>
+
+var enableScroll = false;
+
+var prevent = function (e) { e.preventDefault(); };
+
+document.getElementById("toggle").addEventListener('click', function(e)
+{
+	if (enableScroll ^= true) {
+		e.target.innerHTML = "locked";
+    	window.addEventListener("touchmove", prevent);
+	}
+	else {
+		e.target.innerHTML = "unlocked";
+    	window.removeEventListener("touchmove", prevent);
+	}
+});
+</script>
+</body>
+</html>

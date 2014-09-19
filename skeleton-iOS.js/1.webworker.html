@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ore js test</title>
+<meta name="viewport" content="initial-scale=1.0,user-scalable=0"/>
+<link href="stylesheets/scaffold.css" rel="stylesheet">
+</head>
+
+<body>
+
+<p id="test">worker test</p>
+
+<script>
+
+	var myWorker = new Worker("scripts/worker.js");
+
+	myWorker.addEventListener("message", function(event)
+	{
+		alert(event.data);
+		
+	}, true);
+
+	
+	var node = document.getElementById("test");
+	
+	node.addEventListener("click", function(){
+
+		myWorker.postMessage(test.id);
+	
+	}, true);
+	
+</script>
+</body>
+</html>

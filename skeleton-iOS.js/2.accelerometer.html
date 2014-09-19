@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ore js test</title>
+<meta name="viewport" content="initial-scale=1.0,user-scalable=0"/>
+<link href="stylesheets/scaffold.css" rel="stylesheet">
+</head>
+
+<body>
+
+<h1>DEVICE MOTION</h1>
+
+<h2>ACCELERATION</h2>
+<p id="ac0">X:</p>
+<p id="ac1">Y:</p>
+<p id="ac2">Z:</p>
+
+<h2>ACCELERATION INCLUDING GRAVITY</h2>
+<p id="ag0">X:</p>
+<p id="ag1">Y:</p>
+<p id="ag2">Z:</p>
+
+<h2>ROTATION RATE</h2>
+<p id="rt0">ALPHA:</p>
+<p id="rt1">BETA:</p>
+<p id="rt2">GAMMA:</p>
+
+<script>
+
+(function()
+{
+	
+	var deviceMotion = function(e) {
+		
+		e.preventDefault();
+		var ac = e.acceleration;
+		var ag = e.accelerationIncludingGravity;
+		var rt = e.rotationRate;
+		
+		document.getElementById("ac0").innerHTML = "X: " + ac.x;
+		document.getElementById("ac1").innerHTML = "Y: " + ac.y;
+		document.getElementById("ac2").innerHTML = "Z: " + ac.z;
+
+		document.getElementById("ag0").innerHTML = "X: " + ag.x;
+		document.getElementById("ag1").innerHTML = "Y: " + ag.y;
+		document.getElementById("ag2").innerHTML = "Z: " + ag.z;
+
+		document.getElementById("rt0").innerHTML = "ALPHA: " + rt.alpha;
+		document.getElementById("rt1").innerHTML = "BETA: " + rt.beta;
+		document.getElementById("rt2").innerHTML = "GAMMA: " + rt.gamma;
+		
+	};
+	
+    window.addEventListener("devicemotion", deviceMotion);
+	
+})();
+
+	
+</script>
+</body>
+</html>
