@@ -16,6 +16,11 @@ require './private/apikey'
 
 class MyApp < Sinatra::Base
 	
+	ActiveRecord::Base.establish_connection(
+		adapter:'sqlite3',
+		database:'./db/test.sqlite'
+	)
+	
 	configure do
 	  enable :sessions
 		set :environment, :production
@@ -25,17 +30,16 @@ class MyApp < Sinatra::Base
 	  end
 	end
 	
-	helpers Sinatra::AppHelper
-	helpers Sinatra::MigrateHelper
-	
 	before do
 	  pass if request.path_info =~ /^\/auth\//
 	  pass if request.path_info =~ /^\/$/
 	  redirect to('/auth/twitter') unless current_user
 	end
+	
+	helpers Sinatra::AppHelper
+	helpers Sinatra::MigrateHelper
 
 	get '/' do
-			# Report.create(name:'myname', uid:'123123123', report:'dnfksjndfkjn sdkfskldjfl sdfml')
 			# Reports = Report.all
 	  '<a href="/login">login</a>'
 	end
@@ -63,9 +67,11 @@ class MyApp < Sinatra::Base
 
 	get '/home' do
 		migrate
-	  # 'Hello omniauth-twitter!<br><a href="/logout">logout</a>'
 	end
+	
+	get '/mig/post' do
+		post
+	end
+	
+	run! if app_file == $0
 end
-
-
-MyApp.run!
