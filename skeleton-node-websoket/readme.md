@@ -4,7 +4,21 @@
 [参考](http://qiita.com/ta9to/items/3cf49726b9636c8f0c0c)
 
 
-## init & install
+
+## このrepoをcloneした場合
+
+	$ npm install -d # dependenciesをinstall
+	$ node app.js
+
+で起動できる。
+
+
+
+
+## ゼロから始める場合
+
+
+### init & install
 	npm init # package.json を作成
 	npm install -g express
 	npm install -g express-generator //CLI
@@ -16,8 +30,8 @@
 	$ express --ejs ArtnightServer
 	$ cd ArtnightServer
 	$ npm install -d
-	
-## app.js
+
+### app.js
 
 	var WebSocketServer = require('ws').Server
 	var http = require('http')
@@ -52,7 +66,7 @@
 	    });
 	});
 
-## index.html
+### index.html
 
 	<html>
 	  <head>
@@ -89,13 +103,13 @@
 	  </body>
 	</html>
 
-## 起動
+### 起動
 
 	$ node app.js # 起動
 
 これで動く。
 
-## gitignore
+### gitignore
 
 [https://github.com/github/gitignore/blob/master/Node.gitignore](https://github.com/github/gitignore/blob/master/Node.gitignore)
 
@@ -123,7 +137,7 @@
 
 	# Compiled binary addons (http://nodejs.org/api/addons.html)
 	build/Release
-	
+
 	# Dependency directory
 	# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 	node_modules
