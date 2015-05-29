@@ -5,6 +5,7 @@ module Sakane
 
 	class Application < Sinatra::Base
 
+    register Sinatra::Reloader
     
 		# routing!
     get '/' do
