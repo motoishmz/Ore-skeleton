@@ -1,0 +1,17 @@
+# A sample Gemfile
+source "https://rubygems.org"
+
+gem "sinatra"
+gem "sinatra-contrib" # for Sinatra/reloader
+
+# 以下はsknの様にdb必要な場合等...
+# group :development do
+#   gem 'shotgun'
+#   gem 'tux'
+# end
+# 
+# gem "sqlite3"
+# gem "activerecord"
+# gem "sinatra-activerecord"
+# gem "rake"
+# gem "rdiscount" # markdown parser
