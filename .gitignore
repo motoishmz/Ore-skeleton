@@ -3,7 +3,9 @@ node_modules
 
 # sinatra
 tmp
-
+vendor
+vendor/bundle
+.bundle
 
 
 # Some general ignore patterns
