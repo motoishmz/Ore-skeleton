@@ -1,6 +1,3 @@
-## Sprint page
-
-http://motion101.herokuapp.com/
 
 ## 各ページの.mdファイル
 
