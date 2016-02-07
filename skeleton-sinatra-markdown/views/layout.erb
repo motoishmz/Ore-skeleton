@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+	<%= "#{title} -" if defined?(title) %> Motion101
+</title>
+<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/motion101.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<!-- ////////////////////// -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar-inner">	
+<div class="container">
+<a class="brand" href="/">Motion101</a>
+</div>
+</div>
+</div>
+<!-- ////////////////////// -->
+
+
+
+
+
+<!-- ////////////////////// -->
+<div class="container">
+<!-- ///// -->
+<div class="text">
+<%= yield %>
+</div>
+<!-- ///// -->
+
+<!-- ///// -->
+<div class="nav">
+<nav>
+<ul>
+<% @pages.each_with_index { |page, i| %>
+<li><a href="/<%= page %>"><%= @titles[i] %></a></li>
+<% } %>
+</ul>
+</nav>
+</div>
+<!-- ///// -->
+
+<hr>
+
+
+<!-- /// -->
+<footer>
+<p>&copy; ... 2016</p>
+</footer>
+<!-- /// -->
+
+</div> <!-- /container -->
+<!-- ////////////////////// -->
+
+</body>
+</html>
